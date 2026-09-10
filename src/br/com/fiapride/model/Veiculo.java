@@ -30,11 +30,18 @@ public class Veiculo {
         return nivelCombustivel;
     }
 
+    public void setNivelCombustivel(double nivelCombustivel) {
+        if (nivelCombustivel < 0) {
+            throw new IllegalArgumentException("O nivel de combustivel nao pode ser negativo.");
+        }
+        this.nivelCombustivel = nivelCombustivel;
+    }
+
     public void adicionarCombustivel(double litros) {
         if (litros <= 0) {
             throw new IllegalArgumentException("A quantidade adicionada deve ser maior que zero.");
         }
-        this.nivelCombustivel += litros;
+        setNivelCombustivel(this.nivelCombustivel + litros);
     }
 
     public void consumirCombustivel(double litros) {
@@ -45,7 +52,7 @@ public class Veiculo {
             throw new IllegalArgumentException(
                 "Combustivel insuficiente: disponivel " + this.nivelCombustivel + "L, solicitado " + litros + "L.");
         }
-        this.nivelCombustivel -= litros;
+        setNivelCombustivel(this.nivelCombustivel - litros);
     }
 
     @Override
