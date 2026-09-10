@@ -2,24 +2,28 @@ package br.com.fiapride.model;
 
 public class Veiculo {
 
-    private final String proprietario;
+    private String proprietario;
     private final String placa;
     private double nivelCombustivel;
 
     public Veiculo(String proprietario, String placa) {
-        if (proprietario == null || proprietario.isBlank()) {
-            throw new IllegalArgumentException("O proprietario nao pode ser vazio.");
-        }
         if (placa == null || placa.isBlank()) {
             throw new IllegalArgumentException("A placa nao pode ser vazia.");
         }
-        this.proprietario = proprietario;
+        setProprietario(proprietario);
         this.placa = placa;
         this.nivelCombustivel = 0;
     }
 
     public String getProprietario() {
         return proprietario;
+    }
+
+    public void setProprietario(String proprietario) {
+        if (proprietario == null || proprietario.isBlank()) {
+            throw new IllegalArgumentException("O proprietario nao pode ser vazio.");
+        }
+        this.proprietario = proprietario;
     }
 
     public String getPlaca() {
