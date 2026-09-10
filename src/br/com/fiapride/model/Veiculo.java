@@ -58,9 +58,4 @@ public class Veiculo {
         }
         setNivelCombustivel(this.nivelCombustivel - litros);
     }
-
-    @Override
-    public String toString() {
-        return "Dono: " + proprietario + " | Placa: " + placa + " | Gasolina: " + nivelCombustivel;
-    }
 }

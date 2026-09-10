@@ -15,6 +15,7 @@ public class SistemaPrincipal {
             System.out.println("Operacao bloqueada: " + e.getMessage());
         }
 
-        System.out.println(v1);
+        System.out.println("Dono: " + v1.getProprietario() + " | Placa: " + v1.getPlaca()
+                + " | Gasolina: " + v1.getNivelCombustivel());
     }
 }
